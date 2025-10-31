@@ -1,1 +1,973 @@
-[]
+[
+    {
+        "id": "d1ea13bb24642f67",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1080bc42c4fdd3b7",
+        "type": "group",
+        "z": "d1ea13bb24642f67",
+        "name": "Thermostat and Valve",
+        "style": {
+            "label": true,
+            "color": "#001f60",
+            "stroke": "#ffcf3f"
+        },
+        "nodes": [
+            "72e0749312a5e8f9",
+            "bac6c96ba1a8a468",
+            "84facb582e942e1d",
+            "b89a345623ba1d1a",
+            "5d1114d64103183d",
+            "b7b7a12864136d8f",
+            "6afdd53129f74798",
+            "ea3db8346943117e",
+            "0395bccb9cf27043",
+            "c3fa59314fca1a03",
+            "b57518418e99561e",
+            "07af09ee725c0c0c",
+            "2b2b6c1d4d3d4c7a",
+            "f1a649239206480b"
+        ],
+        "x": 74,
+        "y": 139,
+        "w": 872,
+        "h": 282
+    },
+    {
+        "id": "da5c67868cb1cb4f",
+        "type": "io7-hub",
+        "name": "friday",
+        "host": "mqtt",
+        "useTLS": false,
+        "knownPort": true,
+        "port": "1883",
+        "tls": "",
+        "clientid": ""
+    },
+    {
+        "id": "ecc52e0ee1509c40",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "420a0ab612fb4a1b",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "e04cdb085148a152",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "43d5b8116c14a458",
+        "type": "telegram bot",
+        "botname": "friday_iot_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "e1df4ba63b35d92d",
+        "type": "ui-page",
+        "name": "Page11 ",
+        "ui": "e04cdb085148a152",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "420a0ab612fb4a1b",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": -1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "526b43dc4a1c2a58",
+        "type": "ui-group",
+        "name": "Group11",
+        "page": "e1df4ba63b35d92d",
+        "width": 6,
+        "height": 1,
+        "order": -1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "72e0749312a5e8f9",
+        "type": "io7 in",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "valve",
+        "deviceId": "valve",
+        "authentication": "da5c67868cb1cb4f",
+        "evt": "status",
+        "fmt": "json",
+        "qos": "0",
+        "allDevices": false,
+        "allEvents": false,
+        "allFormats": false,
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "5d1114d64103183d"
+            ]
+        ]
+    },
+    {
+        "id": "bac6c96ba1a8a468",
+        "type": "io7 out",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "authentication": "da5c67868cb1cb4f",
+        "name": "valve",
+        "deviceId": "valve",
+        "cmd": "power",
+        "fmt": "json",
+        "qos": "0",
+        "retain": "false",
+        "x": 850,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "84facb582e942e1d",
+        "type": "io7 out",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "authentication": "da5c67868cb1cb4f",
+        "name": "thermostat1",
+        "deviceId": "thermostat1",
+        "cmd": "set",
+        "fmt": "json",
+        "qos": "0",
+        "retain": "false",
+        "x": 850,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b89a345623ba1d1a",
+        "type": "io7 in",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "thermostat1",
+        "deviceId": "thermostat1",
+        "authentication": "da5c67868cb1cb4f",
+        "evt": "status",
+        "fmt": "json",
+        "qos": "0",
+        "allDevices": false,
+        "allEvents": false,
+        "allFormats": false,
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "ea3db8346943117e",
+                "2b2b6c1d4d3d4c7a"
+            ]
+        ]
+    },
+    {
+        "id": "5d1114d64103183d",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "update ui",
+        "func": "msg.payload = msg.payload.d.valve;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "c3fa59314fca1a03"
+            ]
+        ]
+    },
+    {
+        "id": "b7b7a12864136d8f",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "command",
+        "func": "msg.payload = {\n    \"d\" : {\n        \"valve\" : msg.payload\n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "bac6c96ba1a8a468"
+            ]
+        ]
+    },
+    {
+        "id": "6afdd53129f74798",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "automate",
+        "func": "let evt1 = { d : {}};\n\nif (msg.payload.d.target > msg.payload.d.temperature) {\n    evt1.d.valve = 'on';\n} else {\n    evt1.d.valve = 'off';  \n}\nreturn {payload : evt1};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 260,
+        "wires": [
+            [
+                "bac6c96ba1a8a468"
+            ]
+        ]
+    },
+    {
+        "id": "ea3db8346943117e",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "update ui 2",
+        "func": "let target = {\n    payload : msg.payload.d.target\n}\nlet temperature = {\n    payload : msg.payload.d.temperature\n}\nreturn [target, temperature];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "07af09ee725c0c0c"
+            ],
+            [
+                "b57518418e99561e"
+            ]
+        ]
+    },
+    {
+        "id": "0395bccb9cf27043",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "command",
+        "func": "msg.payload = {\n    \"d\" : {\n        \"target\" : msg.payload\n    }\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 360,
+        "wires": [
+            [
+                "84facb582e942e1d"
+            ]
+        ]
+    },
+    {
+        "id": "07af09ee725c0c0c",
+        "type": "ui-slider",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "group": "526b43dc4a1c2a58",
+        "name": "",
+        "label": "설정온도",
+        "tooltip": "",
+        "order": 2,
+        "width": 2,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "10",
+        "max": "60",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "0395bccb9cf27043"
+            ]
+        ]
+    },
+    {
+        "id": "c3fa59314fca1a03",
+        "type": "ui-switch",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "",
+        "label": "밸브",
+        "group": "526b43dc4a1c2a58",
+        "order": 3,
+        "width": 2,
+        "height": 0,
+        "passthru": false,
+        "decouple": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "b7b7a12864136d8f"
+            ]
+        ]
+    },
+    {
+        "id": "b57518418e99561e",
+        "type": "ui-gauge",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "",
+        "group": "526b43dc4a1c2a58",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 2,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "현재온도",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "℃",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "22",
+                "color": "#0056d6",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "32",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 500,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b2b6c1d4d3d4c7a",
+        "type": "gate",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "",
+        "controlTopic": "control",
+        "defaultState": "open",
+        "openCmd": "open",
+        "closeCmd": "close",
+        "toggleCmd": "toggle",
+        "defaultCmd": "default",
+        "statusCmd": "status",
+        "persist": false,
+        "storeName": "memory",
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [
+                "6afdd53129f74798"
+            ]
+        ]
+    },
+    {
+        "id": "f1a649239206480b",
+        "type": "link in",
+        "z": "d1ea13bb24642f67",
+        "g": "1080bc42c4fdd3b7",
+        "name": "link in 1",
+        "links": [
+            "3dca6a068b7b7a9b"
+        ],
+        "x": 155,
+        "y": 260,
+        "wires": [
+            [
+                "2b2b6c1d4d3d4c7a"
+            ]
+        ]
+    },
+    {
+        "id": "86186025499ba852",
+        "type": "telegram command",
+        "z": "d1ea13bb24642f67",
+        "name": "",
+        "command": "/set",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "43d5b8116c14a458",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "1d536e1100994581"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1d536e1100994581",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "parsing",
+        "func": "let cmd = msg.payload.content.trim().split(':').map(item => item.trim());\nif (cmd.length < 2) return;\nmsg.payload = { [cmd[0]]: cmd[1] };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "a611a3ff6cdf5ed7"
+            ]
+        ]
+    },
+    {
+        "id": "a611a3ff6cdf5ed7",
+        "type": "switch",
+        "z": "d1ea13bb24642f67",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "temp",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "auto",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "e62748eeead2dbef",
+                "51b74512b5807e42"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e62748eeead2dbef",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "temp",
+        "func": "if (!msg.payload.temp) return null;\nmsg.payload = msg.payload.temp\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 440,
+        "wires": [
+            [
+                "0395bccb9cf27043"
+            ]
+        ]
+    },
+    {
+        "id": "51b74512b5807e42",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "cmdMap",
+        "func": "if (!msg.payload.auto) return null;\nconst cmdMap = {\n 'on':'open',\n 'true':'open',\n 'off':'close',\n 'false':'close'\n};\nif (cmdMap[msg.payload.auto] === undefined) {\n return null;\n\n}\nmsg.payload = cmdMap[msg.payload.auto];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 500,
+        "wires": [
+            [
+                "689bf4ed5174c539"
+            ]
+        ]
+    },
+    {
+        "id": "892eb39be1bc995c",
+        "type": "inject",
+        "z": "d1ea13bb24642f67",
+        "name": "init auto",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "208a1b68f8ae0cf9"
+            ]
+        ]
+    },
+    {
+        "id": "208a1b68f8ae0cf9",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "restore Auto setting",
+        "func": "msg.payload = flow.get('enableAuto') || 'open';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 580,
+        "wires": [
+            [
+                "689bf4ed5174c539"
+            ]
+        ]
+    },
+    {
+        "id": "9c90447ae2b5b215",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "auto:on/off",
+        "func": "msg.topic = 'control';\nflow.set('enableAuto', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 520,
+        "wires": [
+            [
+                "3dca6a068b7b7a9b"
+            ]
+        ]
+    },
+    {
+        "id": "3dca6a068b7b7a9b",
+        "type": "link out",
+        "z": "d1ea13bb24642f67",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "f1a649239206480b"
+        ],
+        "x": 1155,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "689bf4ed5174c539",
+        "type": "ui-switch",
+        "z": "d1ea13bb24642f67",
+        "name": "",
+        "label": "Enable Automation",
+        "group": "526b43dc4a1c2a58",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "open",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "close",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 830,
+        "y": 520,
+        "wires": [
+            [
+                "9c90447ae2b5b215"
+            ]
+        ]
+    },
+    {
+        "id": "f386a702b8df8e89",
+        "type": "inject",
+        "z": "d1ea13bb24642f67",
+        "name": "3hours",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10800",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 640,
+        "wires": [
+            [
+                "f8dc3f6069111752"
+            ]
+        ]
+    },
+    {
+        "id": "f8dc3f6069111752",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "weather",
+        "func": "let lat = \"37.37731944\";\nlet lon = \"126.8050778\";\nlet key = 'dc8673d45046c875088087609ce02264'\nmsg.url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=metric&cnt=3`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 640,
+        "wires": [
+            [
+                "4d94266d082cc9da"
+            ]
+        ]
+    },
+    {
+        "id": "4d94266d082cc9da",
+        "type": "http request",
+        "z": "d1ea13bb24642f67",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 640,
+        "wires": [
+            [
+                "495523ca091a2e06"
+            ]
+        ]
+    },
+    {
+        "id": "495523ca091a2e06",
+        "type": "function",
+        "z": "d1ea13bb24642f67",
+        "name": "Temp Drop?",
+        "func": "let dt = new Date(msg.payload.list[0].dt * 1000);\nconst temp_thresold = 16;\nlet avg = (msg.payload.list[0].main.temp + msg.payload.list[1].main.temp) / 2;\nlet temp_trend = -(msg.payload.list[0].main.temp - msg.payload.list[1].main.temp);\nif (avg > temp_thresold || temp_trend > 0) {\n    return null;\n}\nmsg.payload = {\n    chatId: 'friday_iot_bot',\n    type: 'message',\n    content: `Temperature is dropping fast to ${avg.toFixed(1)}°C! Check the Heating`\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 640,
+        "wires": [
+            [
+                "d3f99879d3b14ce0",
+                "eb3d130b24964f25"
+            ]
+        ]
+    },
+    {
+        "id": "d3f99879d3b14ce0",
+        "type": "telegram sender",
+        "z": "d1ea13bb24642f67",
+        "name": "",
+        "bot": "43d5b8116c14a458",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb3d130b24964f25",
+        "type": "debug",
+        "z": "d1ea13bb24642f67",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 740,
+        "wires": []
+    }
+]
